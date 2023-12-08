@@ -1,7 +1,7 @@
 {
-  "name": "EvoBot",
-  "description": "🤖 Discord Music Bot built with discord.js",
-  "repository": "https://github.com/eritislami/evobot",
-  "logo": "https://i.imgur.com/JFxgbWH.png",
+  "name": "Amadeus",
+  "description": "Bot de Discord basado en la IA ficticia llamada Amadeus de la serie Steins;Gate",
+  "repository": "https://github.com/Flix14/amadeus-bot",
+  "logo": "https://i.imgur.com/5FbysDv.png",
   "keywords": ["discord", "discordjs", "typescript", "music", "bot"]
 }

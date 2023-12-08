@@ -1,137 +1,118 @@
-![Node build](https://github.com/eritislami/evobot/actions/workflows/node.yml/badge.svg)
-![Docker build](https://github.com/eritislami/evobot/actions/workflows/docker.yml/badge.svg)
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
-![logo](https://repository-images.githubusercontent.com/186841818/8aa95700-7730-11e9-84be-e80f28520325)
+![logo](https://i.imgur.com/5FbysDv.png)
 
-# 🤖 EvoBot (Discord Music Bot)
+# ⚙️ Amadeus (Bot de Discord)
 
-> EvoBot is a Discord Music Bot built with TypeScript, discord.js & uses Command Handler from [discordjs.guide](https://discordjs.guide)
+> Amadeus es un bot de Discord basado en la IA ficticia llamada Amadeus de la serie Steins;Gate. Diseñado con typescript y **[discord.js](https://discordjs.guide/#before-you-begin)**  
 
-## Requirements
+## Requerimientos
 
-1. Discord Bot Token **[Guide](https://discordjs.guide/preparations/setting-up-a-bot-application.html#creating-your-bot)**  
-   1.1. Enable 'Message Content Intent' in Discord Developer Portal
-2. Node.js 16.11.0 or newer
+1. Bot de Discord y su token **[Guía](https://discordjs.guide/preparations/setting-up-a-bot-application.html#creating-your-bot)**  
+   1.1. Activar 'Message Content Intent' en el **[Portal de Desarrolladores de Discord](https://discord.com/developers/docs/intro)**
+2. Node.js 16.11.0 o superior
 
-## 🚀 Getting Started
+## ✅ Instalación y configuración
 
 ```sh
-git clone https://github.com/eritislami/evobot.git
-cd evobot
+git clone https://github.com/Flix14/amadeus-bot
+cd amadeus-bot
 npm install
 ```
 
-After installation finishes follow configuration instructions then run `npm run start` to start the bot.
+Copia o renombra el archivo `config.json.example` a `config.json` y llena las siguientes configuraciones:
 
-## ⚙️ Configuration
-
-Copy or Rename `config.json.example` to `config.json` and fill out the values:
-
-⚠️ **Note: Never commit or share your token or api keys publicly** ⚠️
+⚠️ **Cuidado: Nunca compartas tu token** ⚠️
 
 ```json
 {
   "TOKEN": "",
   "MAX_PLAYLIST_SIZE": 10,
   "PRUNING": false,
-  "LOCALE": "en",
+  "LOCALE": "es",
   "DEFAULT_VOLUME": 100,
   "STAY_TIME": 30
 }
 ```
 
-## 🐬 Docker Configuration
+Finalmente, ejecuta el siguiente comando `npm run start` para inciar el bot.
 
-For those who would prefer to use our [Docker container](https://hub.docker.com/repository/docker/eritislami/evobot), you may provide values from `config.json` as environment variables.
+## 🐬 Configuración para Docker
+
+Copia o renombra el archivo `config.json.example` a `config.json` y llena las configuraciones como en el paso anterior. Finalmente, ejecuta el siguiente comando:
 
 ```shell
-docker run -e "TOKEN=<discord-token>" eritislami/evobot
+docker-compose up -d --build
 ```
 
-## 📝 Features & Commands
+## 📝 Comandos y características
 
-- 🎶 Play music from YouTube via url
+- 🎶 Reproducir música de YouTube por url
 
-`/play https://www.youtube.com/watch?v=GLvohMXgcBo`
+`/play https://www.youtube.com/watch?v=hzPg6CZj4Yg`
 
-- 🔎 Play music from YouTube via search query
+- 🔎 Reproducir música de YouTube mediante una consulta
 
-`/play under the bridge red hot chili peppers`
+`/play hacking to the gate itou kanako`
 
-- 🔎 Search and select music to play
+- 🔎 Buscar y seleccionar música para reproducir
 
-`/search Pearl Jam`
+`/search steins gate`
 
-- 📃 Play youtube playlists via url
+- 📃 Reproducir un lista de Youtube por url
 
-`/playlist https://www.youtube.com/watch?v=YlUKcNNmywk&list=PL5RNCwK3GIO13SR_o57bGJCEmqFAwq82c`
+`/playlist https://www.youtube.com/watch?v=SBQprWeOx8g&list=PLtAUhEfZCZFxOn256T1Bxn-_f4me1ShgU`
 
-- 🔎 Play youtube playlists via search query
+- 🔎 Reproducir una lista de YouTube mediante una consulta
 
-`/playlist linkin park meteora`
+`/playlist steins gate music`
 
-- Now Playing (/np)
-- Queue system (/queue)
-- Loop / Repeat (/loop)
-- Shuffle (/shuffle)
-- Volume control (/volume)
-- Lyrics (/lyrics)
-- Pause (/pause)
-- Resume (/resume)
-- Skip (/skip)
-- Skip to song # in queue (/skipto)
-- Move a song in the queue (/move)
-- Remove song # from queue (/remove)
-- Show ping to Discord API (/ping)
-- Show bot uptime (/uptime)
-- Toggle pruning of bot messages (/pruning)
-- Help (/help)
-- Command Handler from [discordjs.guide](https://discordjs.guide/)
-- Media Controls via Reactions
+- Ahora reproduciendo (/np)
+- Sistema de lista (/queue)
+- Repetir (/loop)
+- Aleatorio (/shuffle)
+- Control de volumen (/volume)
+- Letra (/lyrics)
+- Pausa (/pause)
+- Resumir (/resume)
+- Saltar (/skip)
+- Saltar hasta la canción # de la lista (/skipto)
+- Mover una canción en la lista (/move)
+- Eliminar la canción # de la lista (/remove)
+- Mostrar el ping hacia la API de Discord (/ping)
+- Mostrar el tiempo que lleva el reproductor activado (/uptime)
+- Alternar la eliminación de mensajes del bot (/pruning)
+- Ayuda (/help)
+- Controles multimedia mediante reacciones
 
-![reactions](https://i.imgur.com/0hdUX1C.png)
+## 🌎 Configuraciones regionales
 
-## 🌎 Locales
+Configuraciones regionales disponibles:
 
-Currently available locales are:
-
-- English (en)
-- Arabic (ar)
-- Brazilian Portuguese (pt_br)
-- Bulgarian (bg)
-- Romanian (ro)
-- Czech (cs)
-- Dutch (nl)
-- French (fr)
-- German (de)
-- Greek (el)
-- Indonesian (id)
-- Italian (it)
-- Japanese (ja)
-- Korean (ko)
-- Minionese (mi)
-- Persian (fa)
-- Polish (pl)
-- Russian (ru)
-- Simplified Chinese (zh_cn)
-- Singaporean Mandarin (zh_sg)
-- Spanish (es)
-- Swedish (sv)
-- Traditional Chinese (zh_tw)
-- Thai (th)
-- Turkish (tr)
-- Ukrainian (uk)
-- Vietnamese (vi)
-- Check [Contributing](#-contributing) if you wish to help add more languages!
-- For languages please use [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) two letter format
-
-## 🤝 Contributing
-
-1. [Fork the repository](https://github.com/eritislami/evobot/fork)
-2. Clone your fork: `git clone https://github.com/your-username/evobot.git`
-3. Create your feature branch: `git checkout -b my-new-feature`
-4. Stage changes `git add .`
-5. Commit your changes: `cz` OR `npm run commit` do not use `git commit`
-6. Push to the branch: `git push origin my-new-feature`
-7. Submit a pull request
+- Ingles (en)
+- Árabe (ar)
+- Portugués de Brasil (pt_br)
+- Búlgaro (bg)
+- Rumano (ro)
+- Checo (cs)
+- Neerlandés (nl)
+- Francés (fr)
+- Alemán (de)
+- Griego (el)
+- Indonesio (id)
+- Italiano (it)
+- Japonés (ja)
+- Coreano (ko)
+- Maorí (mi)
+- Persa (fa)
+- Polaco (pl)
+- Ruso (ru)
+- Chino Simplificado (zh_cn)
+- Mandarín de Singapur (zh_sg)
+- Español (es)
+- Sueco (sv)
+- Chino Tradicional (zh_tw)
+- Tailandés (th)
+- Turco (tr)
+- Ucraniano (uk)
+- Vietnamita (vi)
+- Para idiomas se utiliza el formato [ISO 639-1](https://es.wikipedia.org/wiki/ISO_639-1#Lista_idiomas) de dos letras

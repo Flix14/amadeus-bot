@@ -1,7 +1,7 @@
 ARG NODE_VERSION=18.18.2-slim
 FROM node:${NODE_VERSION} as base
 
-ENV USER=evobot
+ENV USER=amadeus
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends python3 build-essential && \
@@ -9,10 +9,10 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 RUN groupadd -r ${USER} && \
-    useradd --create-home --home /home/evobot -r -g ${USER} ${USER}
+    useradd --create-home --home /home/amadeus -r -g ${USER} ${USER}
 
 USER ${USER}
-WORKDIR /home/evobot
+WORKDIR /home/amadeus
 
 FROM base as build
 
@@ -26,7 +26,7 @@ RUN rm -rf node_modules && \
 FROM node:${NODE_VERSION} as prod
 
 COPY --chown=${USER}:${USER} package*.json ./
-COPY --from=build --chown=${USER}:${USER} /home/evobot/node_modules ./node_modules
-COPY --from=build --chown=${USER}:${USER} /home/evobot/dist ./dist
+COPY --from=build --chown=${USER}:${USER} /home/amadeus/node_modules ./node_modules
+COPY --from=build --chown=${USER}:${USER} /home/amadeus/dist ./dist
 
 CMD [ "node", "./dist/index.js" ]

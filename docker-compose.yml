@@ -1,0 +1,10 @@
+version: "3.8"
+
+services:
+  amadeus-bot:
+    build: .
+    image: amadeus-bot:latest
+    container_name: amadeus-bot
+    restart: unless-stopped
+    volumes:
+      - ./config.json:/dist/config.json:ro
