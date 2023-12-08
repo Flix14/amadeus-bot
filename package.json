@@ -1,13 +1,13 @@
 {
-  "name": "evobot",
-  "version": "2.8.1",
-  "description": "Discord music bot built with discord.js",
+  "name": "amadeus",
+  "version": "1.0.0",
+  "description": "Bot de Discord basado en la IA ficticia llamada Amadeus de la serie Steins;Gate",
   "main": "index.ts",
-  "author": "Erit Islami <eritislami@gmail.com>",
+  "author": "Felix Gonzalez <flixgm14@gmail.com>",
   "private": true,
-  "homepage": "https://github.com/eritislami/evobot",
-  "repository": "github:eritislami/evobot",
-  "bugs": "https://github.com/eritislami/evobot/issues",
+  "homepage": "https://github.com/Flix14/amadeus-bot",
+  "repository": "github:Flix14/amadeus-bot",
+  "bugs": "https://github.com/Flix14/amadeus-bot/issues",
   "engines": {
     "node": ">=16.11.0"
   },
